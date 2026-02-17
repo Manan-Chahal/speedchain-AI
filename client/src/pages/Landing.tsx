@@ -170,8 +170,8 @@ export default function Landing() {
         <div className="absolute inset-0 bg-primary/5 -skew-y-3 transform origin-top-left scale-110" />
         <div className="container mx-auto px-4 relative z-10">
           <SectionHeader 
-            title="Your AI-Powered Content Engine"
-            subtitle="From one idea to a week of content in minutes."
+            title="Create Content in Your Voice — Without Recording Every Week"
+            subtitle="Speedchain AI creates a digital version of you so content can be produced without repeated recording."
           />
 
           <div className="relative mt-20">
@@ -180,10 +180,10 @@ export default function Landing() {
 
             <div className="grid md:grid-cols-4 gap-8 relative z-10">
               {[
-                { step: "01", title: "Share Idea", desc: "Type a topic or paste a link", icon: Sparkles },
-                { step: "02", title: "AI Scripting", desc: "We generate viral hooks & scripts", icon: Bot },
-                { step: "03", title: "AI Video Gen", desc: "Avatars or b-roll visuals created", icon: Video },
-                { step: "04", title: "Ready to Post", desc: "Fully edited vertical video", icon: Check }
+                { step: "01", title: "Record Once", desc: "Share a 2–3 minute video and voice sample introducing yourself and your business.", icon: Video },
+                { step: "02", title: "Create Your AI Avatar", desc: "We build your AI avatar and voice model that matches your speaking style and tone.", icon: Bot },
+                { step: "03", title: "Share Topics", desc: "Tell us your niche, ideas, or weekly topics.", icon: Sparkles },
+                { step: "04", title: "We Create Everything", desc: "Scripts, AI avatar videos, B-roll, captions, and professional editing delivered.", icon: Check }
               ].map((item, i) => (
                 <motion.div 
                   key={i}
@@ -191,17 +191,34 @@ export default function Landing() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.15 }}
-                  className="bg-card/80 backdrop-blur-sm border border-white/10 p-8 rounded-2xl text-center relative"
+                  className="bg-card/80 backdrop-blur-sm border border-white/10 p-8 rounded-2xl text-center relative flex flex-col items-center"
                 >
                   <div className="w-16 h-16 mx-auto bg-background rounded-full border-4 border-card flex items-center justify-center mb-6 shadow-xl relative z-20">
                     <item.icon className="w-7 h-7 text-primary" />
                   </div>
+                  
+                  {/* Visual Example for Step 2 */}
+                  {i === 1 && (
+                    <div className="mb-4 w-full aspect-square rounded-lg bg-gradient-to-br from-primary/20 to-purple-500/20 border border-white/5 flex items-center justify-center overflow-hidden">
+                      <div className="relative w-20 h-20 rounded-full border-2 border-primary/30 flex items-center justify-center">
+                        <Bot className="w-10 h-10 text-primary opacity-50" />
+                        <div className="absolute inset-0 border-2 border-primary rounded-full animate-ping opacity-20" />
+                      </div>
+                    </div>
+                  )}
+
                   <div className="text-sm font-bold text-primary mb-2">STEP {item.step}</div>
                   <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.desc}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
+          </div>
+          
+          <div className="mt-16 text-center">
+            <p className="text-xl font-medium text-foreground">
+              Result: You stay consistent online without spending time recording videos.
+            </p>
           </div>
         </div>
       </section>
