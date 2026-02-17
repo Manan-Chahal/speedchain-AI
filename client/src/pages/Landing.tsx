@@ -315,67 +315,55 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* Pricing/Get Started */}
       <section id="pricing" className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <SectionHeader title="Simple, Transparent Pricing" subtitle="Cancel anytime. No long-term contracts." />
+          <SectionHeader title="Start Building Your Authority Today" subtitle="Experience the power of AI content with zero upfront risk." />
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-16">
-            {[
-              { 
-                name: "Starter", 
-                price: "$99", 
-                desc: "For founders just starting out",
-                features: ["4 Videos / Month", "AI Script Generation", "Basic Templates", "72h Turnaround"] 
-              },
-              { 
-                name: "Growth", 
-                price: "$299", 
-                popular: true,
-                desc: "Most popular for scaling",
-                features: ["12 Videos / Month", "Premium AI Avatars", "Custom Branding", "48h Turnaround", "Priority Support"] 
-              },
-              { 
-                name: "Founder Engine", 
-                price: "$599", 
-                desc: "Full content automation",
-                features: ["30 Videos / Month", "Daily Posting Schedule", "Dedicated Manager", "24h Turnaround", "Performance Analytics"] 
-              }
-            ].map((plan, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className={`relative p-8 rounded-2xl border ${plan.popular ? 'bg-primary/5 border-primary shadow-2xl shadow-primary/10' : 'bg-card border-white/10'}`}
-              >
-                {plan.popular && (
-                  <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4">
-                    <span className="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Most Popular</span>
+          <div className="max-w-3xl mx-auto mt-16">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative p-12 rounded-3xl border bg-primary/5 border-primary shadow-2xl shadow-primary/10 text-center"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
+                <Sparkles className="w-5 h-5 text-primary" />
+                <span className="text-sm font-bold text-primary uppercase tracking-wider">Limited Time Offer</span>
+              </div>
+              
+              <h3 className="text-4xl font-bold mb-6">Start Today & Get 1-2 Demo Videos</h3>
+              <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
+                See yourself on screen without ever hitting record. We'll create your first 1-2 demo videos for free. 
+                Only start paying after your 3rd video if you absolutely love the results.
+              </p>
+              
+              <div className="grid sm:grid-cols-2 gap-6 mb-12 text-left max-w-xl mx-auto">
+                {[
+                  "No credit card required to start",
+                  "Professional AI avatar creation",
+                  "Full script & editing included",
+                  "Stop anytime — no contracts"
+                ].map((feature, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                      <Check className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-foreground font-medium">{feature}</span>
                   </div>
-                )}
-                
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <div className="text-4xl font-bold mb-2">{plan.price}<span className="text-lg font-normal text-muted-foreground">/mo</span></div>
-                <p className="text-muted-foreground mb-8 text-sm">{plan.desc}</p>
-                
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-3 text-sm">
-                      <Check className="w-4 h-4 text-primary shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                
-                <LeadFormDialog>
-                  <Button className={`w-full py-6 font-semibold rounded-xl ${plan.popular ? 'bg-primary hover:bg-primary/90' : 'bg-white/10 hover:bg-white/20'}`}>
-                    Choose {plan.name}
-                  </Button>
-                </LeadFormDialog>
-              </motion.div>
-            ))}
+                ))}
+              </div>
+              
+              <LeadFormDialog>
+                <Button size="lg" className="w-full sm:w-auto h-16 px-12 text-xl font-bold rounded-2xl bg-primary hover:bg-primary/90 text-white shadow-xl shadow-primary/20">
+                  Claim Your Free Demo Videos
+                </Button>
+              </LeadFormDialog>
+              
+              <p className="mt-8 text-muted-foreground font-medium">
+                You can stop anytime. No questions asked.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
