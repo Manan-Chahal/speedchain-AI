@@ -1,0 +1,221 @@
+Create a modern, premium SaaS-style landing page for a product called Speedchain AI — Founder Content Engine.
+
+The landing page should be responsive (desktop + mobile), fast loading, and designed for high conversion. Use a clean, minimal, slightly dark modern design similar to AI SaaS websites.
+
+Tech stack:
+
+HTML
+
+Tailwind CSS (preferred)
+
+Simple JavaScript if needed
+
+Smooth scrolling animations
+
+Modern typography
+
+Rounded cards and soft shadows
+
+CTA buttons with hover effects
+
+Primary goal:
+Generate leads and get users to click “Book Free Demo”.
+
+✅ SECTION 1 — HERO SECTION (Above the Fold)
+
+Headline:
+Post Daily Content Without Recording Yourself
+
+Subheadline:
+AI-powered content automation for founders who want consistent content without spending time creating videos.
+
+Bullet points:
+
+Scripts written for you
+
+AI videos created weekly
+
+Ready-to-post content delivered
+
+Primary CTA button:
+Book Free Demo
+
+Background:
+
+clean dark gradient or minimal background
+
+autoplay muted demo video or animated placeholder in background
+
+modern SaaS look
+
+✅ SECTION 2 — SOCIAL PROOF / TRUST BAR
+
+Add a horizontal section below hero.
+
+Text:
+Trusted by founders, creators & growing businesses
+
+Show placeholder stats:
+
+500+ videos created
+
+50+ founders served
+
+1000+ content pieces delivered
+
+Design as clean statistic cards.
+
+✅ SECTION 3 — PROBLEM SECTION
+
+Title:
+Why Most Founders Fail at Content
+
+Bullet points:
+
+No time to record regularly
+
+Don’t know what to say
+
+Content takes too long
+
+Inconsistent posting kills growth
+
+Closing line highlighted:
+Consistency builds authority. Automation makes consistency possible.
+
+✅ SECTION 4 — SOLUTION SECTION
+
+Title:
+Your AI-Powered Content Engine
+
+Show a visual workflow diagram:
+
+Founder Idea → Script → AI Video → Ready to Post
+
+Description:
+Speedchain handles the entire content workflow so founders stay visible online without extra effort.
+
+Use icons or simple graphics for steps.
+
+✅ SECTION 5 — DEMO VIDEOS SECTION (IMPORTANT)
+
+Create a dedicated section titled:
+
+See Speedchain AI in Action
+
+This section should include:
+
+A responsive video grid layout (2 rows minimum)
+
+Each video card contains:
+
+embedded video player placeholder
+
+title below video
+
+caption: “AI-generated using Speedchain system”
+
+Use placeholder videos that can later be replaced with real demo videos.
+
+Videos should open in modal/lightbox when clicked.
+
+✅ SECTION 6 — HOW IT WORKS
+
+Title:
+How It Works
+
+Three steps in horizontal layout:
+
+Tell us your niche
+
+We create content weekly
+
+You post & grow
+
+Minimal explanation text under each.
+
+✅ SECTION 7 — WHO IT’S FOR
+
+Two-column layout.
+
+Left column:
+Perfect for:
+
+Founders
+
+Consultants
+
+Coaches
+
+Agency owners
+
+B2B businesses
+
+Right column:
+Not for:
+
+Meme pages
+
+Entertainment creators
+
+Design as comparison cards.
+
+✅ SECTION 8 — PRICING SECTION
+
+Three pricing cards:
+
+Starter
+Growth (highlighted as Most Popular)
+Founder Engine
+
+Add:
+
+monthly pricing placeholder
+
+feature list
+
+CTA button
+
+Add text:
+Cancel anytime
+
+✅ SECTION 9 — FAQ SECTION
+
+Accordion-style FAQ:
+
+Do I need to record videos? → No
+
+Can I edit scripts? → Yes
+
+How fast delivery? → Weekly batches
+
+Which platforms? → LinkedIn, Instagram, YouTube Shorts
+
+✅ SECTION 10 — FINAL CTA SECTION
+
+Large closing section.
+
+Headline:
+Build Authority Without Spending Time on Content
+
+Subtext:
+No camera. No editing. No content stress.
+
+Large CTA button:
+Book Free Demo
+
+✅ DESIGN REQUIREMENTS
+
+Modern SaaS look similar to AI startups
+
+Smooth scroll transitions
+
+Consistent spacing
+
+Mobile optimized
+
+Fast loading
+
+Professional typography
+
+Dark theme with accent color (blue or purple)
