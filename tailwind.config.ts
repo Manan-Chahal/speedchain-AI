@@ -11,6 +11,18 @@ export default {
         sm: ".1875rem", /* 3px */
       },
       colors: {
+        // SpeedChain brand colors (matching speed-chain-automation)
+        'main-bg': '#F5F5F5',
+        'dark-bg': '#121212',
+        'light-bg': '#FFFFFF',
+        'dark-text': '#E0E0E0',
+        'main-text': '#333333',
+        'brand-accent': '#ECEEDF',
+        'light-text': '#E9E3DF',
+        'service-text': '#C9CDCF',
+        'brand-cyan': '#0096C7',
+        'brand-red': '#DC3C22',
+
         // Flat / base colors (regular buttons)
         background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",
@@ -83,9 +95,10 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["var(--font-sans)"],
+        sans: ["'DM Sans'", "var(--font-sans)", "sans-serif"],
         serif: ["var(--font-serif)"],
         mono: ["var(--font-mono)"],
+        heading: ["'Roboto Flex'", "var(--font-heading)", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {

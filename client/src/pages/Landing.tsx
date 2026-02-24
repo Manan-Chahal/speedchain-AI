@@ -50,7 +50,7 @@ export default function Landing() {
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-white/5">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 font-bold text-xl tracking-tight">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-brand-cyan flex items-center justify-center">
               <Zap className="w-5 h-5 text-white fill-current" />
             </div>
             <span>Speedchain AI</span>
@@ -61,7 +61,7 @@ export default function Landing() {
             <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
           </div>
           <LeadFormDialog>
-            <Button size="sm" className="bg-white text-black hover:bg-gray-200 font-semibold">
+            <Button size="sm" className="bg-brand-cyan text-white hover:bg-brand-red font-semibold transition-colors duration-300">
               Get Started
             </Button>
           </LeadFormDialog>
@@ -73,8 +73,8 @@ export default function Landing() {
         <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
         
         {/* Abstract background blobs */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] translate-y-1/4 -translate-x-1/4 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-cyan/15 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-600/10 rounded-full blur-[120px] translate-y-1/4 -translate-x-1/4 pointer-events-none" />
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
@@ -100,7 +100,7 @@ export default function Landing() {
             
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <LeadFormDialog>
-                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25 rounded-full">
+                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg bg-brand-cyan hover:bg-brand-red text-white shadow-lg shadow-brand-cyan/25 rounded-full transition-colors duration-300">
                   Book Free Demo <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </LeadFormDialog>
@@ -152,10 +152,10 @@ export default function Landing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-6 rounded-2xl bg-card border border-white/5 hover:border-primary/50 transition-colors group"
+                className="p-6 rounded-2xl bg-card border border-white/5 hover:border-brand-cyan/50 transition-colors group"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <item.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-brand-cyan/10 flex items-center justify-center mb-6 group-hover:bg-brand-cyan/20 transition-colors">
+                  <item.icon className="w-6 h-6 text-brand-cyan" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
@@ -167,7 +167,7 @@ export default function Landing() {
 
       {/* Solution/Workflow Section */}
       <section id="features" className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/5 -skew-y-3 transform origin-top-left scale-110" />
+        <div className="absolute inset-0 bg-brand-cyan/5 -skew-y-3 transform origin-top-left scale-110" />
         <div className="container mx-auto px-4 relative z-10">
           <SectionHeader 
             title="Create Content in Your Voice — Without Recording Every Week"
@@ -176,7 +176,7 @@ export default function Landing() {
 
           <div className="relative mt-20">
             {/* Connecting line for desktop */}
-            <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/50 to-transparent -translate-y-1/2 z-0" />
+            <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-brand-cyan/50 to-transparent -translate-y-1/2 z-0" />
 
             <div className="grid md:grid-cols-4 gap-8 relative z-10">
               {[
@@ -194,20 +194,20 @@ export default function Landing() {
                   className="bg-card/80 backdrop-blur-sm border border-white/10 p-8 rounded-2xl text-center relative flex flex-col items-center"
                 >
                   <div className="w-16 h-16 mx-auto bg-background rounded-full border-4 border-card flex items-center justify-center mb-6 shadow-xl relative z-20">
-                    <item.icon className="w-7 h-7 text-primary" />
+                    <item.icon className="w-7 h-7 text-brand-cyan" />
                   </div>
                   
                   {/* Visual Example for Step 2 */}
                   {i === 1 && (
-                    <div className="mb-4 w-full aspect-square rounded-lg bg-gradient-to-br from-primary/20 to-purple-500/20 border border-white/5 flex items-center justify-center overflow-hidden">
-                      <div className="relative w-20 h-20 rounded-full border-2 border-primary/30 flex items-center justify-center">
-                        <Bot className="w-10 h-10 text-primary opacity-50" />
-                        <div className="absolute inset-0 border-2 border-primary rounded-full animate-ping opacity-20" />
+                    <div className="mb-4 w-full aspect-square rounded-lg bg-gradient-to-br from-brand-cyan/20 to-teal-500/20 border border-white/5 flex items-center justify-center overflow-hidden">
+                      <div className="relative w-20 h-20 rounded-full border-2 border-brand-cyan/30 flex items-center justify-center">
+                        <Bot className="w-10 h-10 text-brand-cyan opacity-50" />
+                        <div className="absolute inset-0 border-2 border-brand-cyan rounded-full animate-ping opacity-20" />
                       </div>
                     </div>
                   )}
 
-                  <div className="text-sm font-bold text-primary mb-2">STEP {item.step}</div>
+                  <div className="text-sm font-bold text-brand-cyan mb-2">STEP {item.step}</div>
                   <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
@@ -240,7 +240,7 @@ export default function Landing() {
                   >
                     {/* Abstract video placeholder */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${
-                      i % 2 === 0 ? 'from-indigo-900 via-purple-900 to-black' : 'from-blue-900 via-slate-900 to-black'
+                      i % 2 === 0 ? 'from-cyan-900 via-teal-900 to-black' : 'from-sky-900 via-slate-900 to-black'
                     }`} />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-[2px]">
                       <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
@@ -256,9 +256,9 @@ export default function Landing() {
                 </DialogTrigger>
                 <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-black border-white/10">
                   <div className="aspect-video w-full relative bg-black flex items-center justify-center">
-                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 to-purple-900/20" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 to-teal-900/20" />
                     <div className="text-center z-10 p-8">
-                      <PlayCircle className="w-16 h-16 text-primary mx-auto mb-4 opacity-50" />
+                      <PlayCircle className="w-16 h-16 text-brand-cyan mx-auto mb-4 opacity-50" />
                       <h3 className="text-2xl font-bold mb-2">Demo Video Placeholder</h3>
                       <p className="text-muted-foreground">This would be an actual video player in production.</p>
                     </div>
@@ -325,11 +325,11 @@ export default function Landing() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative p-12 rounded-3xl border bg-primary/5 border-primary shadow-2xl shadow-primary/10 text-center"
+              className="relative p-12 rounded-3xl border bg-brand-cyan/5 border-brand-cyan shadow-2xl shadow-brand-cyan/10 text-center"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
-                <Sparkles className="w-5 h-5 text-primary" />
-                <span className="text-sm font-bold text-primary uppercase tracking-wider">Limited Time Offer</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 mb-8">
+                <Sparkles className="w-5 h-5 text-brand-cyan" />
+                <span className="text-sm font-bold text-brand-cyan uppercase tracking-wider">Limited Time Offer</span>
               </div>
               
               <h3 className="text-4xl font-bold mb-6">Start Today & Get 1-2 Demo Videos</h3>
@@ -346,8 +346,8 @@ export default function Landing() {
                   "Stop anytime — no contracts"
                 ].map((feature, idx) => (
                   <div key={idx} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
-                      <Check className="w-4 h-4 text-primary" />
+                    <div className="w-6 h-6 rounded-full bg-brand-cyan/20 flex items-center justify-center shrink-0">
+                      <Check className="w-4 h-4 text-brand-cyan" />
                     </div>
                     <span className="text-foreground font-medium">{feature}</span>
                   </div>
@@ -355,7 +355,7 @@ export default function Landing() {
               </div>
               
               <LeadFormDialog>
-                <Button size="lg" className="w-full sm:w-auto h-16 px-12 text-xl font-bold rounded-2xl bg-primary hover:bg-primary/90 text-white shadow-xl shadow-primary/20">
+                <Button size="lg" className="w-full sm:w-auto h-16 px-12 text-xl font-bold rounded-2xl bg-brand-cyan hover:bg-brand-red text-white shadow-xl shadow-brand-cyan/20 transition-colors duration-300">
                   Claim Your Free Demo Videos
                 </Button>
               </LeadFormDialog>
@@ -381,7 +381,7 @@ export default function Landing() {
               { q: "Which platforms does this work for?", a: "Our videos are optimized for vertical formats - perfect for TikTok, Instagram Reels, YouTube Shorts, and LinkedIn video." }
             ].map((faq, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="border-white/10">
-                <AccordionTrigger className="text-lg hover:text-primary transition-colors text-left">{faq.q}</AccordionTrigger>
+                <AccordionTrigger className="text-lg hover:text-brand-cyan transition-colors text-left">{faq.q}</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-lg leading-relaxed">
                   {faq.a}
                 </AccordionContent>
@@ -393,7 +393,7 @@ export default function Landing() {
 
       {/* Final CTA */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/20 blur-[120px]" />
+        <div className="absolute inset-0 bg-brand-cyan/20 blur-[120px]" />
         <div className="container mx-auto px-4 relative z-10 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -410,7 +410,7 @@ export default function Landing() {
             transition={{ delay: 0.2 }}
           >
             <LeadFormDialog>
-              <Button size="lg" className="h-16 px-10 text-xl rounded-full bg-white text-black hover:bg-gray-200 font-bold shadow-2xl shadow-white/10">
+              <Button size="lg" className="h-16 px-10 text-xl rounded-full bg-brand-cyan text-white hover:bg-brand-red font-bold shadow-2xl shadow-brand-cyan/10 transition-colors duration-300">
                 Get Started Now - It's Free to Chat
               </Button>
             </LeadFormDialog>
@@ -425,7 +425,7 @@ export default function Landing() {
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div className="col-span-2">
               <div className="flex items-center gap-2 font-bold text-xl mb-4 justify-center md:justify-start">
-                <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-brand-cyan flex items-center justify-center">
                   <Zap className="w-5 h-5 text-white fill-current" />
                 </div>
                 <span>Speedchain AI</span>

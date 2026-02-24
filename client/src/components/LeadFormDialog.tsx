@@ -90,7 +90,7 @@ export function LeadFormDialog({ children }: LeadFormDialogProps) {
               </DialogDescription>
             </DialogHeader>
             <Button
-              className="mt-2 w-full bg-primary hover:bg-primary/90 text-white font-semibold py-6"
+              className="mt-2 w-full bg-brand-cyan hover:bg-brand-red text-white font-semibold py-6 transition-colors duration-300"
               onClick={openCalendar}
             >
               📅 Open Google Calendar
@@ -124,7 +124,7 @@ export function LeadFormDialog({ children }: LeadFormDialogProps) {
                     <FormItem>
                       <FormLabel>Full Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" className="bg-background/50 border-white/10 focus:border-primary/50" {...field} value={field.value ?? ""} />
+                        <Input placeholder="John Doe" className="bg-background/50 border-white/10 focus:border-brand-cyan/50" {...field} value={field.value ?? ""} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -137,7 +137,7 @@ export function LeadFormDialog({ children }: LeadFormDialogProps) {
                     <FormItem>
                       <FormLabel>Work Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="john@company.com" className="bg-background/50 border-white/10 focus:border-primary/50" {...field} />
+                        <Input placeholder="john@company.com" className="bg-background/50 border-white/10 focus:border-brand-cyan/50" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -150,7 +150,7 @@ export function LeadFormDialog({ children }: LeadFormDialogProps) {
                     <FormItem>
                       <FormLabel>Company Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Acme Inc." className="bg-background/50 border-white/10 focus:border-primary/50" {...field} value={field.value ?? ""} />
+                        <Input placeholder="Acme Inc." className="bg-background/50 border-white/10 focus:border-brand-cyan/50" {...field} value={field.value ?? ""} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -158,7 +158,7 @@ export function LeadFormDialog({ children }: LeadFormDialogProps) {
                 />
                 <Button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-6 mt-2"
+                  className="w-full bg-brand-cyan hover:bg-brand-red text-white font-semibold py-6 mt-2 transition-colors duration-300"
                   disabled={createLead.isPending}
                 >
                   {createLead.isPending ? (
