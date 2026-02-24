@@ -393,7 +393,7 @@ export default function Landing() {
 
       {/* Final CTA */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-brand-cyan/20 blur-[120px]" />
+        <div className="absolute inset-0 bg-brand-cyan/20 blur-[120px] pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
