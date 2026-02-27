@@ -124,6 +124,25 @@ pnpm-lock.yaml
 *.tgz
 
 # ========================
+# Large Media / Video Files
+# ========================
+*.mp4
+*.webm
+*.mov
+*.avi
+*.mkv
+*.wmv
+*.flv
+*.m4v
+# Allow demo videos served from client/public (uncomment to track them)
+# !client/public/demo*.mp4
+
+# ========================
+# Attached / Uploaded Assets
+# ========================
+attached_assets/
+
+# ========================
 # Runtime / Cache
 # ========================
 .cache/

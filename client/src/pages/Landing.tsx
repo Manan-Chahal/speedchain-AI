@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useRef } from "react";
 import { LeadFormDialog } from "@/components/LeadFormDialog";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
@@ -24,7 +25,9 @@ import {
   PlayCircle,
   ArrowRight,
   Sparkles,
-  Bot
+  Bot,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 
 // Animation variants
@@ -42,6 +45,123 @@ const staggerContainer = {
     }
   }
 };
+
+const VIDEOS = [1, 2, 3, 4];
+
+function ExamplesCarousel() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>("[data-card]");
+    const cardWidth = card ? card.offsetWidth + 20 : 340;
+    el.scrollBy({ left: direction === "right" ? cardWidth : -cardWidth, behavior: "smooth" });
+  };
+
+  return (
+    <div className="relative">
+      {/* Left arrow */}
+      <button
+        onClick={() => scroll("left")}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background/90 border border-white/15 shadow-lg flex items-center justify-center text-white/60 hover:text-white hover:border-brand-cyan/50 hover:bg-brand-cyan/10 transition-all duration-200"
+        aria-label="Scroll left"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+
+      {/* Right arrow */}
+      <button
+        onClick={() => scroll("right")}
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background/90 border border-white/15 shadow-lg flex items-center justify-center text-white/60 hover:text-white hover:border-brand-cyan/50 hover:bg-brand-cyan/10 transition-all duration-200"
+        aria-label="Scroll right"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+
+      {/* Left fade edge */}
+      <div className="pointer-events-none absolute left-10 top-0 bottom-0 w-10 bg-gradient-to-r from-background to-transparent z-10" />
+      {/* Right fade edge */}
+      <div className="pointer-events-none absolute right-10 top-0 bottom-0 w-10 bg-gradient-to-l from-background to-transparent z-10" />
+
+      {/* Scroll track */}
+      <div
+        ref={scrollRef}
+        className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide scroll-smooth px-12"
+        style={{ justifyContent: "safe center" }}
+      >
+        {VIDEOS.map((i) => (
+          <Dialog key={i}>
+            <DialogTrigger asChild>
+              <motion.div
+                data-card
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (i - 1) * 0.1, duration: 0.5, ease: "easeOut" }}
+                className="group relative flex-shrink-0 w-[260px] sm:w-[300px] rounded-2xl overflow-hidden bg-card border border-white/10 cursor-pointer snap-center shadow-lg hover:shadow-brand-cyan/10 hover:border-white/20 transition-all duration-300"
+                style={{ aspectRatio: "9/16" }}
+              >
+                {/* Video */}
+                <video
+                  src={`/demo${i}.mp4`}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  muted
+                  playsInline
+                  preload="metadata"
+                  onMouseEnter={(e) => (e.currentTarget as HTMLVideoElement).play()}
+                  onMouseLeave={(e) => {
+                    const v = e.currentTarget as HTMLVideoElement;
+                    v.pause();
+                    v.currentTime = 0;
+                  }}
+                />
+
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/20" />
+
+                {/* Badge */}
+                <div className="absolute top-4 left-4">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 text-[11px] font-semibold text-white tracking-wide">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse flex-shrink-0" />
+                    AI Generated
+                  </span>
+                </div>
+
+                {/* Play icon */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-full bg-white/15 backdrop-blur border border-white/25 flex items-center justify-center opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300 ease-out">
+                    <PlayCircle className="w-7 h-7 text-white" />
+                  </div>
+                </div>
+
+                {/* Bottom info */}
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <p className="text-white font-semibold text-sm leading-snug">Example Output #{i}</p>
+                  <p className="text-white/45 text-xs mt-0.5">Generated in 2 minutes</p>
+                </div>
+              </motion.div>
+            </DialogTrigger>
+
+            <DialogContent className="max-w-[360px] w-full p-0 overflow-hidden bg-black border-white/10 rounded-2xl">
+              <video
+                src={`/demo${i}.mp4`}
+                className="w-full"
+                style={{ aspectRatio: "9/16" }}
+                controls
+                autoPlay
+                playsInline
+              />
+            </DialogContent>
+          </Dialog>
+        ))}
+      </div>
+
+      {/* Mobile hint */}
+      <p className="text-center text-muted-foreground/40 text-xs mt-4 md:hidden">Swipe to see more →</p>
+    </div>
+  );
+}
 
 export default function Landing() {
   return (
@@ -223,50 +343,31 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Demo Section */}
+      {/* Real Client Examples Section */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <SectionHeader title="See Speedchain AI in Action" />
-          
-          <div className="grid md:grid-cols-2 gap-8 mt-12 max-w-5xl mx-auto">
-            {[1, 2, 3, 4].map((i) => (
-              <Dialog key={i}>
-                <DialogTrigger asChild>
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="group relative aspect-video rounded-2xl overflow-hidden bg-card border border-white/10 cursor-pointer"
-                  >
-                    {/* Abstract video placeholder */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${
-                      i % 2 === 0 ? 'from-cyan-900 via-teal-900 to-black' : 'from-sky-900 via-slate-900 to-black'
-                    }`} />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-[2px]">
-                      <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30">
-                        <PlayCircle className="w-8 h-8 text-white fill-white/20" />
-                      </div>
-                    </div>
-                    
-                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
-                      <h4 className="text-white font-bold text-lg">Example Output #{i}</h4>
-                      <p className="text-white/60 text-sm">Generated in 2 minutes</p>
-                    </div>
-                  </motion.div>
-                </DialogTrigger>
-                <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-black border-white/10">
-                  <div className="aspect-video w-full relative bg-black flex items-center justify-center">
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 to-teal-900/20" />
-                    <div className="text-center z-10 p-8">
-                      <PlayCircle className="w-16 h-16 text-brand-cyan mx-auto mb-4 opacity-50" />
-                      <h3 className="text-2xl font-bold mb-2">Demo Video Placeholder</h3>
-                      <p className="text-muted-foreground">This would be an actual video player in production.</p>
-                    </div>
-                  </div>
-                </DialogContent>
-              </Dialog>
-            ))}
-          </div>
+
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 mb-5">
+              <Sparkles className="w-4 h-4 text-brand-cyan" />
+              <span className="text-xs font-bold text-brand-cyan uppercase tracking-widest">100% AI Generated</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold font-heading tracking-tight mb-4">
+              Real Client Examples
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+              Every video below was created entirely with AI — no camera, no studio, no editing hours.
+            </p>
+          </motion.div>
+
+          {/* Carousel wrapper */}
+          <ExamplesCarousel />
         </div>
       </section>
 
