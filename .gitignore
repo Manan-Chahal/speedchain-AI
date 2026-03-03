@@ -125,17 +125,8 @@ pnpm-lock.yaml
 
 # ========================
 # Large Media / Video Files
+# (Videos are tracked — no patterns excluded here)
 # ========================
-*.mp4
-*.webm
-*.mov
-*.avi
-*.mkv
-*.wmv
-*.flv
-*.m4v
-# Allow demo videos served from client/public (uncomment to track them)
-# !client/public/demo*.mp4
 
 # ========================
 # Attached / Uploaded Assets
