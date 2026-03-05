@@ -5,35 +5,35 @@
 @tailwind utilities;
 
 :root {
-  /* SpeedChain Brand Palette — matches speed-chain-automation */
-  --background: 0 0% 7%;          /* #121212 dark-bg */
-  --foreground: 30 13% 91%;       /* #E9E3DF light-text */
-  
-  --card: 0 0% 11%;               /* #1C1C1C */
-  --card-foreground: 30 13% 91%;  /* #E9E3DF */
-  
-  --popover: 0 0% 7%;
-  --popover-foreground: 30 13% 91%;
-  
+  /* SpeedChain Brand Palette — White & Light Blue Theme */
+  --background: 210 100% 98%;     /* #F0F8FF light blue-white */
+  --foreground: 220 47% 11%;      /* #0F172A dark navy */
+
+  --card: 0 0% 100%;              /* #FFFFFF white */
+  --card-foreground: 220 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 47% 11%;
+
   --primary: 195 100% 39%;        /* #0096C7 brand cyan */
   --primary-foreground: 0 0% 100%;
-  
-  --secondary: 0 0% 20%;          /* #333333 */
-  --secondary-foreground: 30 13% 91%;
-  
-  --muted: 0 0% 15%;
-  --muted-foreground: 200 5% 78%; /* #C9CDCF service-text */
-  
-  --accent: 60 19% 91%;           /* #ECEEDF cream accent */
-  --accent-foreground: 0 0% 7%;
-  
+
+  --secondary: 210 40% 94%;       /* #EAF2F8 light blue-gray */
+  --secondary-foreground: 220 47% 11%;
+
+  --muted: 210 40% 96%;           /* #EEF4FA */
+  --muted-foreground: 215 16% 47%; /* #64748B slate */
+
+  --accent: 195 100% 94%;         /* #E0F7FF light cyan */
+  --accent-foreground: 195 100% 20%;
+
   --destructive: 8 78% 49%;       /* #DC3C22 brand red */
   --destructive-foreground: 0 0% 100%;
-  
-  --border: 0 0% 18%;
-  --input: 0 0% 18%;
+
+  --border: 215 28% 88%;          /* #CDDAEA light slate-blue */
+  --input: 215 28% 88%;
   --ring: 195 100% 39%;           /* matches primary cyan */
-  
+
   --radius: 0.75rem;
 
   --font-sans: 'DM Sans', sans-serif;
@@ -61,7 +61,7 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/70;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-800 via-sky-800 to-[#0096C7];
   }
   
   .text-gradient-primary {
@@ -70,13 +70,13 @@
 
   .bg-grid-pattern {
     background-size: 40px 40px;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(0, 150, 199, 0.07) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 150, 199, 0.07) 1px, transparent 1px);
     mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
   }
   
   .glass-card {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl;
+    @apply bg-white/80 backdrop-blur-md border border-slate-200 shadow-xl;
   }
 
   .scrollbar-hide {

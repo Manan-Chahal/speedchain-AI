@@ -64,7 +64,7 @@ function ExamplesCarousel() {
       {/* Left arrow */}
       <button
         onClick={() => scroll("left")}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background/90 border border-white/15 shadow-lg flex items-center justify-center text-white/60 hover:text-white hover:border-brand-cyan/50 hover:bg-brand-cyan/10 transition-all duration-200"
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-400 hover:text-brand-cyan hover:border-brand-cyan/50 hover:bg-sky-50 transition-all duration-200"
         aria-label="Scroll left"
       >
         <ChevronLeft className="w-5 h-5" />
@@ -73,7 +73,7 @@ function ExamplesCarousel() {
       {/* Right arrow */}
       <button
         onClick={() => scroll("right")}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background/90 border border-white/15 shadow-lg flex items-center justify-center text-white/60 hover:text-white hover:border-brand-cyan/50 hover:bg-brand-cyan/10 transition-all duration-200"
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-400 hover:text-brand-cyan hover:border-brand-cyan/50 hover:bg-sky-50 transition-all duration-200"
         aria-label="Scroll right"
       >
         <ChevronRight className="w-5 h-5" />
@@ -99,7 +99,7 @@ function ExamplesCarousel() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: (i - 1) * 0.1, duration: 0.5, ease: "easeOut" }}
-                className="group relative flex-shrink-0 w-[260px] sm:w-[300px] rounded-2xl overflow-hidden bg-card border border-white/10 cursor-pointer snap-center shadow-lg hover:shadow-brand-cyan/10 hover:border-white/20 transition-all duration-300"
+                className="group relative flex-shrink-0 w-[260px] sm:w-[300px] rounded-2xl overflow-hidden bg-white border border-slate-200 cursor-pointer snap-center shadow-md hover:shadow-brand-cyan/20 hover:border-brand-cyan/30 transition-all duration-300"
                 style={{ aspectRatio: "9/16" }}
               >
                 {/* Video */}
@@ -167,7 +167,7 @@ export default function Landing() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Navbar */}
-      <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-white/5">
+      <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-lg border-b border-slate-200 shadow-sm">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 font-bold text-xl tracking-tight">
             <div className="w-8 h-8 rounded-lg bg-brand-cyan flex items-center justify-center">
@@ -175,7 +175,7 @@ export default function Landing() {
             </div>
             <span>Speedchain AI</span>
           </div>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
             <a href="#features" className="hover:text-foreground transition-colors">Features</a>
             <a href="#how-it-works" className="hover:text-foreground transition-colors">How it Works</a>
             <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
@@ -203,9 +203,9 @@ export default function Landing() {
             variants={staggerContainer}
             className="text-center max-w-4xl mx-auto"
           >
-            <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm">
+            <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 mb-8">
               <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-              <span className="text-sm font-medium text-primary-foreground/80">Now accepting early access founders</span>
+              <span className="text-sm font-medium text-brand-cyan">Now accepting early access founders</span>
             </motion.div>
             
             <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-bold font-heading tracking-tight mb-6 leading-tight">
@@ -224,7 +224,7 @@ export default function Landing() {
                   Book Free Demo <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </LeadFormDialog>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-lg rounded-full bg-transparent border-white/10 hover:bg-white/5">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-lg rounded-full bg-transparent border-slate-300 hover:bg-slate-50 text-slate-700">
                 View Examples
               </Button>
             </motion.div>
@@ -233,7 +233,7 @@ export default function Landing() {
       </section>
 
       {/* Social Proof */}
-      <section className="py-10 border-y border-white/5 bg-white/[0.02]">
+      <section className="py-10 border-y border-slate-200 bg-sky-50/60">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
@@ -243,7 +243,7 @@ export default function Landing() {
               { label: "Hours Saved", value: "1000+" }
             ].map((stat, i) => (
               <div key={i}>
-                <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
                 <div className="text-sm text-muted-foreground uppercase tracking-wider">{stat.label}</div>
               </div>
             ))}
@@ -272,7 +272,7 @@ export default function Landing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-6 rounded-2xl bg-card border border-white/5 hover:border-brand-cyan/50 transition-colors group"
+                className="p-6 rounded-2xl bg-white shadow-sm border border-slate-200 hover:border-brand-cyan/50 hover:shadow-md transition-all group"
               >
                 <div className="w-12 h-12 rounded-xl bg-brand-cyan/10 flex items-center justify-center mb-6 group-hover:bg-brand-cyan/20 transition-colors">
                   <item.icon className="w-6 h-6 text-brand-cyan" />
@@ -311,15 +311,15 @@ export default function Landing() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.15 }}
-                  className="bg-card/80 backdrop-blur-sm border border-white/10 p-8 rounded-2xl text-center relative flex flex-col items-center"
+                  className="bg-white/90 backdrop-blur-sm border border-slate-200 shadow-sm p-8 rounded-2xl text-center relative flex flex-col items-center"
                 >
-                  <div className="w-16 h-16 mx-auto bg-background rounded-full border-4 border-card flex items-center justify-center mb-6 shadow-xl relative z-20">
+                  <div className="w-16 h-16 mx-auto bg-white rounded-full border-4 border-sky-100 flex items-center justify-center mb-6 shadow-lg relative z-20">
                     <item.icon className="w-7 h-7 text-brand-cyan" />
                   </div>
                   
                   {/* Visual Example for Step 2 */}
                   {i === 1 && (
-                    <div className="mb-4 w-full aspect-square rounded-lg bg-gradient-to-br from-brand-cyan/20 to-teal-500/20 border border-white/5 flex items-center justify-center overflow-hidden">
+                      <div className="mb-4 w-full aspect-square rounded-lg bg-gradient-to-br from-sky-50 to-teal-50 border border-sky-200 flex items-center justify-center overflow-hidden">
                       <div className="relative w-20 h-20 rounded-full border-2 border-brand-cyan/30 flex items-center justify-center">
                         <Bot className="w-10 h-10 text-brand-cyan opacity-50" />
                         <div className="absolute inset-0 border-2 border-brand-cyan rounded-full animate-ping opacity-20" />
@@ -372,7 +372,7 @@ export default function Landing() {
       </section>
 
       {/* Who it's for */}
-      <section className="py-24 bg-white/[0.02] border-y border-white/5">
+      <section className="py-24 bg-sky-50/60 border-y border-slate-200">
         <div className="container mx-auto px-4">
           <SectionHeader title="Is This For You?" />
           
@@ -470,7 +470,7 @@ export default function Landing() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-card/50">
+      <section className="py-24 bg-sky-50/70">
         <div className="container mx-auto px-4 max-w-3xl">
           <SectionHeader title="Frequently Asked Questions" />
           
@@ -481,7 +481,7 @@ export default function Landing() {
               { q: "How fast is delivery?", a: "We typically deliver your weekly batch of content within 48 hours of script approval." },
               { q: "Which platforms does this work for?", a: "Our videos are optimized for vertical formats - perfect for TikTok, Instagram Reels, YouTube Shorts, and LinkedIn video." }
             ].map((faq, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="border-white/10">
+              <AccordionItem key={i} value={`item-${i}`} className="border-slate-200">
                 <AccordionTrigger className="text-lg hover:text-brand-cyan transition-colors text-left">{faq.q}</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-lg leading-relaxed">
                   {faq.a}
@@ -494,7 +494,7 @@ export default function Landing() {
 
       {/* Final CTA */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-brand-cyan/20 blur-[120px] pointer-events-none" />
+        <div className="absolute inset-0 bg-brand-cyan/10 blur-[120px] pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -521,7 +521,7 @@ export default function Landing() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-white/10 bg-background text-center md:text-left">
+      <footer className="py-12 border-t border-slate-200 bg-white text-center md:text-left">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div className="col-span-2">
@@ -538,20 +538,20 @@ export default function Landing() {
             <div>
               <h4 className="font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+                <li><a href="#" className="hover:text-brand-cyan transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-brand-cyan transition-colors">Careers</a></li>
+                <li><a href="#" className="hover:text-brand-cyan transition-colors">Contact</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Legal</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms</a></li>
+                <li><a href="#" className="hover:text-brand-cyan transition-colors">Privacy</a></li>
+                <li><a href="#" className="hover:text-brand-cyan transition-colors">Terms</a></li>
               </ul>
             </div>
           </div>
-          <div className="pt-8 border-t border-white/5 text-center text-muted-foreground text-sm">
+          <div className="pt-8 border-t border-slate-100 text-center text-muted-foreground text-sm">
             © {new Date().getFullYear()} Speedchain AI. All rights reserved.
           </div>
         </div>
