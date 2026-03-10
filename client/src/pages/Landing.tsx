@@ -139,7 +139,8 @@ function ExamplesCarousel() {
                 {/* Bottom info */}
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <p className="text-white font-semibold text-sm leading-snug">Example Output #{i}</p>
-                  <p className="text-white/45 text-xs mt-0.5"></p>
+                  <p className="text-white/45 text-xs mt-0.5">Email : growth@speedchain.io
+                  </p>
                 </div>
               </motion.div>
             </DialogTrigger>
@@ -589,7 +590,7 @@ export default function Landing() {
               <ul className="space-y-2 text-muted-foreground">
                 <li><a href="#" className="hover:text-brand-cyan transition-colors">About</a></li>
                 <li><a href="#" className="hover:text-brand-cyan transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-brand-cyan transition-colors">Contact</a></li>
+                <li><a href="mailto:growth@speedchain.io" className="hover:text-brand-cyan transition-colors">Contact</a></li>
               </ul>
             </div>
             <div>

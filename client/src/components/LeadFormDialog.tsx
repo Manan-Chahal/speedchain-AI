@@ -95,6 +95,12 @@ export function LeadFormDialog({ children }: LeadFormDialogProps) {
             >
               📅 Open Google Calendar
             </Button>
+            <a
+              href="mailto:growth@speedchain.io"
+              className="text-sm text-brand-cyan hover:underline font-medium"
+            >
+              ✉️ growth@speedchain.io
+            </a>
             <button
               onClick={() => handleClose(false)}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
