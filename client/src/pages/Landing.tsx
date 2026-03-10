@@ -100,12 +100,12 @@ function ExamplesCarousel() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: (i - 1) * 0.1, duration: 0.5, ease: "easeOut" }}
-                className="group relative flex-shrink-0 w-[260px] sm:w-[300px] rounded-2xl overflow-hidden bg-white border border-slate-200 cursor-pointer snap-center shadow-md hover:shadow-brand-cyan/20 hover:border-brand-cyan/30 transition-all duration-300"
+                className="group relative flex-shrink-0 w-[260px] sm:w-[300px] rounded-2xl overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-200 cursor-pointer snap-center shadow-md hover:shadow-brand-cyan/20 hover:border-brand-cyan/30 transition-all duration-300"
                 style={{ aspectRatio: "9/16" }}
               >
-                {/* Video */}
+                {/* Video — #t=0.001 forces iOS Safari to decode & show the first frame */}
                 <video
-                  src={`/demo${i}.mp4`}
+                  src={`/demo${i}.mp4#t=0.001`}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   muted
                   playsInline
@@ -129,9 +129,9 @@ function ExamplesCarousel() {
                   </span>
                 </div>
 
-                {/* Play icon */}
+                {/* Play icon — always visible on mobile, hover-only on desktop */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-14 h-14 rounded-full bg-white/15 backdrop-blur border border-white/25 flex items-center justify-center opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300 ease-out">
+                  <div className="w-14 h-14 rounded-full bg-white/15 backdrop-blur border border-white/25 flex items-center justify-center opacity-100 sm:opacity-0 sm:scale-75 sm:group-hover:opacity-100 sm:group-hover:scale-100 transition-all duration-300 ease-out">
                     <PlayCircle className="w-7 h-7 text-white" />
                   </div>
                 </div>
@@ -144,10 +144,10 @@ function ExamplesCarousel() {
               </motion.div>
             </DialogTrigger>
 
-            <DialogContent className="max-w-[360px] w-full p-0 overflow-hidden bg-black border-white/10 rounded-2xl">
+            <DialogContent className="max-w-[92vw] sm:max-w-[360px] w-full p-0 overflow-hidden bg-black border-white/10 rounded-2xl">
               <video
                 src={`/demo${i}.mp4`}
-                className="w-full"
+                className="w-full block"
                 style={{ aspectRatio: "9/16" }}
                 controls
                 autoPlay
