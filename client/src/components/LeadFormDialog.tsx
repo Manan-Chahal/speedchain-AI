@@ -25,7 +25,7 @@ import { Button } from "@/components/ui/button";
 
 // Google Calendar appointment booking link
 const GOOGLE_CALENDAR_BOOKING_URL =
-  "https://calendar.app.google/ReTU9J8LCyABx4mA8";
+  "https://calendar.app.google/889BmiJyfJ1PD8VP6";
 
 interface LeadFormDialogProps {
   children: React.ReactNode;
