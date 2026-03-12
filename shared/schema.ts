@@ -9,6 +9,10 @@ export const leads = pgTable("leads", {
   company: varchar("company", { length: 255 }),
 });
 
-export const insertLeadSchema = createInsertSchema(leads);
+export const insertLeadSchema = createInsertSchema(leads, {
+  email: z.string().min(1, "Email is required").email("Please enter a valid email"),
+  name: z.string().min(1, "Full name is required").max(255),
+  company: z.string().min(1, "Company name is required").max(255),
+}).omit({ id: true });
 export type InsertLead = z.infer<typeof insertLeadSchema>;
 export type Lead = typeof leads.$inferSelect;
